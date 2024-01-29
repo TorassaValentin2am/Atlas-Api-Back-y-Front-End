@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Front_End.Models.AtlasPhoto>
+
+<form>
+    <div class="container row">
+
+        @foreach (var photo in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="p-0 my-3 border rounded">
+                    <div class="card">
+                        <h3 class="card-title text-black-50 text-center py-2">@photo.Title</h3>
+                        <img src="@photo.ImageUrl" class="card-img-top" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between py-2">
+                                <span class="text-danger" style="font-size:20px;">Photographer: @photo.Photographer</span>
+                            </div>
+                            <p class="card-text">@Html.Raw(photo.Description)</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</form>
